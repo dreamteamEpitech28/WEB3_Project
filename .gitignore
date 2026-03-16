@@ -1,3 +1,13 @@
 node_modules
-node_modules/
-.next/
+
+# Next.js
+.next
+.env
+.env.local
+.env*.local
+
+# Foundry
+contract/lib
+contract/out
+contract/cache
+contract/broadcast
