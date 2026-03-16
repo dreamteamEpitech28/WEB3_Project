@@ -1,5 +1,5 @@
-import { http, createConfig } from "viem";
 import { sepolia, baseSepolia } from "viem/chains";
+import { createConfig, http } from "wagmi";
 
 export const config = createConfig({
   chains: [sepolia, baseSepolia],
