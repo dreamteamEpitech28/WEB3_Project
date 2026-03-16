@@ -1,0 +1,26 @@
+{
+  "tokenId": "000001",
+  "contract": "ERC-721 ChronoX",
+  "owner": "Propriétaire certifié",
+  "model": "ChronoGraph X Limited",
+  "serialNumber": "CHX-9982-LTD",
+  "metadata": {
+    "material": "Titane grade 5 satiné",
+    "caliber": "4130 automatique manufacture",
+    "year": 2026,
+    "weight": "148g",
+    "waterproof": "300m",
+    "caseSize": "42mm",
+    "ipfsHash": "QmX...invisible"
+  },
+  "serviceHistory": [
+    { "date": "2026-03-16", "location": "Paris", "type": "Vente initiale", "status": "✓" },
+    { "date": "2025-12-20", "location": "Genève", "type": "Révision complète", "status": "✓" }
+  ],
+  "status": {
+    "vipSoulbound": true,
+    "transferLocked": "12 mois",
+    "materialsVerified": true,
+    "ownerLegitimate": true
+  }
+}
