@@ -1,0 +1,21 @@
+{
+  "name": "Maison Lumière — Calibre Blanc #002",
+  "description": "Montre de haute horlogerie fictive. Passeport numérique certifié sur blockchain.",
+  "image": "ipfs://YOUR_IMAGE_CID_HERE/watch_002.jpg",
+  "external_url": "https://maison-lumiere.com/passport/002",
+  "attributes": [
+    { "trait_type": "Marque",           "value": "Maison Lumière" },
+    { "trait_type": "Modèle",           "value": "Calibre Blanc" },
+    { "trait_type": "Numéro de série",  "value": "ML-2026-002" },
+    { "trait_type": "Matériau boîtier", "value": "Or rose 18 carats" },
+    { "trait_type": "Matériau bracelet","value": "Bracelet intégré or rose" },
+    { "trait_type": "Calibre",          "value": "ML-002 — Squelette" },
+    { "trait_type": "Réserve de marche","value": "48 heures" },
+    { "trait_type": "Étanchéité",       "value": "30m" },
+    { "trait_type": "Diamètre",         "value": "38mm" },
+    { "trait_type": "Année de fabrication", "value": "2026" },
+    { "trait_type": "Lieu de fabrication",  "value": "Genève, Suisse" },
+    { "trait_type": "Édition",          "value": "Série limitée — 25 exemplaires" },
+    { "trait_type": "Statut",           "value": "Authentique" }
+  ]
+}
