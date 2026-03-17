@@ -1,0 +1,21 @@
+{
+  "name": "Maison Lumière — Calibre Noir #001",
+  "description": "Montre de haute horlogerie fictive. Passeport numérique certifié sur blockchain.",
+  "image": "ipfs://IMAGE_CID_ICI/nom_image.jpg",
+  "external_url": "https://maison-lumiere.com/passport/001",
+  "attributes": [
+    { "trait_type": "Marque",           "value": "Maison Lumière" },
+    { "trait_type": "Modèle",           "value": "Calibre Noir" },
+    { "trait_type": "Numéro de série",  "value": "ML-2026-001" },
+    { "trait_type": "Matériau boîtier", "value": "Titane grade 5" },
+    { "trait_type": "Matériau bracelet","value": "Cuir alligator noir" },
+    { "trait_type": "Calibre",          "value": "ML-001 — Manufacture" },
+    { "trait_type": "Réserve de marche","value": "72 heures" },
+    { "trait_type": "Étanchéité",       "value": "100m" },
+    { "trait_type": "Diamètre",         "value": "42mm" },
+    { "trait_type": "Année de fabrication", "value": "2026" },
+    { "trait_type": "Lieu de fabrication",  "value": "Le Sentier, Vallée de Joux" },
+    { "trait_type": "Édition",          "value": "Série limitée — 50 exemplaires" },
+    { "trait_type": "Statut",           "value": "Authentique" }
+  ]
+}
