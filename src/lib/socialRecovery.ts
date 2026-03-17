@@ -9,7 +9,7 @@
  * avec plusieurs gardiens (guardians) ou une récupération multi-signature.
  */
 
-import { createKernelAccount, createKernelAccountClient, createZeroDevPaymasterClient } from "@zerodev/sdk";
+import { constants, createKernelAccount } from "@zerodev/sdk";
 import { signerToEcdsaValidator } from "@zerodev/ecdsa-validator";
 import { createPublicClient, http, type Address } from "viem";
 import { baseSepolia } from "viem/chains";
@@ -55,10 +55,12 @@ export async function createRecoveryAccount(
 
   const ecdsaValidator = await signerToEcdsaValidator(publicClient, {
     signer: account,
+    entryPoint: constants.getEntryPoint("0.7"),
     kernelVersion: "0.3.1",
   });
 
   const kernelAccount = await createKernelAccount(publicClient, {
+    entryPoint: constants.getEntryPoint("0.7"),
     plugins: {
       sudo: ecdsaValidator,
     },

@@ -1,4 +1,4 @@
-import { sepolia, baseSepolia } from "viem/chains";
+import { baseSepolia } from "viem/chains";
 import { createConfig, http } from "wagmi";
 
 /**
