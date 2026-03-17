@@ -17,7 +17,7 @@ export function WatchHero({ watch }: WatchHeroProps) {
 
   return (
     <motion.div
-      className="relative glassmorphism rounded-3xl p-10 lg:p-12 overflow-hidden"
+      className="relative glassmorphism rounded-3xl p-8 lg:p-10 xl:p-12 overflow-hidden"
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
@@ -27,7 +27,7 @@ export function WatchHero({ watch }: WatchHeroProps) {
         <div className="absolute -bottom-40 -left-32 h-80 w-80 rounded-full bg-slate-500/20 blur-3xl" />
       </div>
 
-      <div className="relative flex flex-col lg:flex-row gap-10 items-start">
+      <div className="relative flex flex-col lg:flex-row gap-10 xl:gap-12 items-start">
         <motion.div
           className="relative mx-auto lg:mx-0"
           initial={{ rotateX: 10, rotateY: -12, scale: 0.96 }}
@@ -35,9 +35,9 @@ export function WatchHero({ watch }: WatchHeroProps) {
           whileHover={{ rotateX: 6, rotateY: 6, scale: 1.02 }}
           transition={{ type: "spring", stiffness: 120, damping: 18 }}
         >
-          <div className="relative h-64 w-64 rounded-full border border-white/20 bg-gradient-to-br from-zinc-900 via-zinc-800 to-black watch-glow flex items-center justify-center">
-            <div className="absolute inset-6 rounded-full border border-white/10" />
-            <div className="absolute inset-12 rounded-full border border-white/5" />
+          <div className="relative h-56 w-56 md:h-64 md:w-64 rounded-full border border-white/20 bg-gradient-to-br from-zinc-900 via-zinc-800 to-black watch-glow flex items-center justify-center">
+            <div className="absolute inset-6 md:inset-8 rounded-full border border-white/10" />
+            <div className="absolute inset-12 md:inset-14 rounded-full border border-white/5" />
             <div className="relative z-10 flex flex-col items-center gap-1">
               <span className="text-[0.65rem] tracking-[0.28em] uppercase text-silver-300">
                 ChronoX Atelier
@@ -55,18 +55,18 @@ export function WatchHero({ watch }: WatchHeroProps) {
           </div>
         </motion.div>
 
-        <div className="relative flex-1 space-y-6">
-          <div className="flex flex-wrap items-center gap-3">
+        <div className="relative flex-1 space-y-6 max-w-xl">
+          <div className="flex flex-wrap items-center gap-2.5">
             <Badge tone="gold">Propriétaire certifié</Badge>
             <Badge tone="silver">ERC-721 ChronoX</Badge>
             <Badge tone="neutral">Token #{watch.tokenId}</Badge>
           </div>
 
-          <div className="space-y-3">
-            <div className="text-xs tracking-[0.32em] uppercase text-silver-300/70">
+          <div className="space-y-4">
+            <div className="text-[0.68rem] tracking-[0.22em] uppercase text-silver-300/70 mb-1">
               Détails techniques
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+            <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-10 xl:gap-x-14 gap-y-4 text-sm">
               <Spec label="Matière" value={watch.metadata.material} />
               <Spec label="Calibre" value={watch.metadata.caliber} />
               <Spec label="Année" value={String(watch.metadata.year)} />
@@ -88,10 +88,10 @@ export function WatchHero({ watch }: WatchHeroProps) {
 function Spec({ label, value }: { label: string; value: string }) {
   return (
     <div className="space-y-1">
-      <div className="text-[0.65rem] uppercase tracking-[0.22em] text-silver-300/60">
+      <div className="text-[0.6rem] uppercase tracking-[0.2em] text-silver-300/60">
         {label}
       </div>
-      <div className="text-sm text-silver-300">{value}</div>
+      <div className="text-sm leading-relaxed text-silver-300">{value}</div>
     </div>
   );
 }

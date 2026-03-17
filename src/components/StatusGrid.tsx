@@ -9,11 +9,11 @@ interface StatusGridProps {
 export function StatusGrid({ status }: StatusGridProps) {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="pb-3">
         <CardTitle>Statut de la pièce</CardTitle>
       </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-2 gap-4">
+      <CardContent className="pt-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <StatusItem
             icon={Check}
             label="Authenticité matière"
@@ -48,7 +48,7 @@ interface StatusItemProps {
 
 function StatusItem({ icon: Icon, label, active }: StatusItemProps) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-start gap-3">
       <div
         className={`h-9 w-9 rounded-full flex items-center justify-center border text-xs ${
           active
@@ -58,7 +58,7 @@ function StatusItem({ icon: Icon, label, active }: StatusItemProps) {
       >
         <Icon className="h-4 w-4" />
       </div>
-      <div className="text-xs text-silver-300">{label}</div>
+      <div className="text-xs leading-snug text-silver-300">{label}</div>
     </div>
   );
 }

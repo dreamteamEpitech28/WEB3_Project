@@ -9,13 +9,13 @@ interface ServiceTimelineProps {
 export function ServiceTimeline({ history }: ServiceTimelineProps) {
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="pb-3">
         <CardTitle>Historique atelier</CardTitle>
       </CardHeader>
-      <CardContent>
-        <div className="relative pl-4">
+      <CardContent className="pt-0">
+        <div className="relative pl-4 pr-2">
           <div className="absolute left-1 top-0 bottom-0 w-px bg-gradient-to-b from-gold-400/60 via-zinc-600 to-transparent" />
-          <div className="space-y-4">
+          <div className="space-y-3">
             {history?.map((event, index) => (
               <motion.div
                 key={`${event.date}-${event.type}`}
@@ -26,9 +26,9 @@ export function ServiceTimeline({ history }: ServiceTimelineProps) {
               >
                 <div className="mt-1 h-2 w-2 rounded-full bg-gold-400 shadow-watch-glow" />
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-xs text-silver-300">
-                    <span className="font-medium">{event.type}</span>
-                    <span className="text-[0.65rem] text-silver-300/70">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-xs text-silver-300">
+                    <span className="font-medium leading-snug">{event.type}</span>
+                    <span className="text-[0.65rem] text-silver-300/70 leading-snug">
                       {event.location}
                     </span>
                   </div>
