@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import { WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { config } from "@/lib/wagmi";
-import { WalletConnectInvisible } from "@/components/WalletConnectInvisible";
+import { AAInitializer } from "@/components/AAInitializer";
 
 const queryClient = new QueryClient();
 
@@ -16,8 +16,9 @@ export function Providers({ children }: ProvidersProps) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <WalletConnectInvisible />
-        {children}
+        <AAInitializer>
+          {children}
+        </AAInitializer>
       </QueryClientProvider>
     </WagmiProvider>
   );
