@@ -1,7 +1,7 @@
 {
   "name": "Maison Lumière — Calibre Blanc #002",
   "description": "Montre de haute horlogerie fictive. Passeport numérique certifié sur blockchain.",
-  "image": "ipfs://IMAGE_CID_ICI/nom_image.jpg",
+  "image": "ipfs://bafybeieiz42dpgr2eiywr6liuhhhgqs34wlvvagrpx6mg46ctis6y65kuu/blanche.png",
   "external_url": "https://maison-lumiere.com/passport/002",
   "attributes": [
     { "trait_type": "Marque",           "value": "Maison Lumière" },
