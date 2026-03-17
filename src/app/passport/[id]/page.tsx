@@ -1,11 +1,11 @@
 import { PassportPageClient } from "@/components/PassportPageClient";
 
-export default function PassportPage({
+export default async function PassportPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  const { id } = await params;
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
