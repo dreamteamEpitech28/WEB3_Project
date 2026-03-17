@@ -7,8 +7,6 @@ import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 /// @title NFCVerifier
 /// @notice Vérifie qu'une URL NFC provient d'un signataire autorisé et n'a pas déjà été utilisée.
 contract NFCVerifier is Ownable {
-    using ECDSA for bytes32;
-
     /// @notice Adresse autorisée à signer les messages NFC (par ex. backend de la marque).
     address public signer;
 
@@ -36,7 +34,10 @@ contract NFCVerifier is Ownable {
         require(!usedDigests[digest], "NFCVerifier: digest already used");
         require(signer != address(0), "NFCVerifier: signer not set");
 
-        address recovered = digest.toEthSignedMessageHash().recover(signature);
+        // Ici, on signe et on vérifie directement le digest brut (protocole interne),
+        // sans préfixe EIP-191, ce qui correspond à l'usage dans les tests et dans
+        // notre script NFC off-chain.
+        address recovered = ECDSA.recover(digest, signature);
         require(recovered == signer, "NFCVerifier: invalid signature");
 
         usedDigests[digest] = true;

@@ -6,10 +6,11 @@ import {NFCVerifier} from "../src/NFCVerifier.sol";
 
 contract NFCVerifierTest is Test {
     NFCVerifier public verifier;
-    address public signer = address(0xA11CE);
+    address public signer;
     uint256 private signerPk = 0xA11CE;
 
     function setUp() public {
+        signer = vm.addr(signerPk);
         verifier = new NFCVerifier(signer);
     }
 
