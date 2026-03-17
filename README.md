@@ -15,7 +15,11 @@ Projet Next.js 14 (App Router) pour un **passeport digital de montre de luxe** a
 ## Démarrage
 
 ```bash
-cd my-watch-passport
+# Clone with submodules (required for Foundry dependencies)
+git clone --recurse-submodules <repo-url>
+# Or, if already cloned without submodules:
+git submodule update --init --recursive
+
 npm install
 npm run dev
 ```
