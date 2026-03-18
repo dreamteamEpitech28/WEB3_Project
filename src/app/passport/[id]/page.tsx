@@ -28,7 +28,7 @@ export default async function PassportPage({
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <main className="px-6 py-16 md:py-20">
       <PassportPageClient id={id} />
     </main>
   );

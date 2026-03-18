@@ -11,19 +11,27 @@
 
   body {
     @apply bg-black text-white font-sans antialiased;
-    background: radial-gradient(circle at top, rgba(240,230,140,0.12), transparent 55%),
-      radial-gradient(circle at bottom, rgba(15,23,42,0.9), #000000);
+    background:
+      radial-gradient(circle at 20% 10%, rgba(240,230,140,0.10), transparent 55%),
+      radial-gradient(circle at 80% 80%, rgba(148,163,184,0.18), transparent 60%),
+      linear-gradient(180deg, #060606, #000000);
   }
 }
 
 @layer components {
+  .container-luxe {
+    @apply mx-auto max-w-6xl px-6;
+  }
+
   .glassmorphism {
-    @apply backdrop-blur-xl bg-black/15 border border-white/10 shadow-2xl;
-    background-image: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
+    @apply backdrop-blur-2xl bg-black/20 border border-white/10 shadow-2xl;
+    background-image:
+      radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 65%),
+      linear-gradient(145deg, rgba(255,255,255,0.08), rgba(0,0,0,0.28));
   }
   
   .luxury-gold {
-    @apply text-gold-400 font-serif tracking-wide;
+    @apply text-gold-400/90 font-serif tracking-wide;
   }
   
   .luxury-silver {
@@ -31,6 +39,18 @@
   }
   
   .watch-glow {
-    box-shadow: 0 0 40px rgba(240, 230, 140, 0.3);
+    box-shadow: 0 0 46px rgba(240, 230, 140, 0.22);
+  }
+
+  .hairline {
+    @apply h-px bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+
+  .kicker {
+    @apply text-[0.65rem] tracking-[0.36em] uppercase text-silver-300/60;
+  }
+
+  .btn-luxe {
+    @apply rounded-full border border-white/10 bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 text-gold-400/90 hover:border-gold-400/50 hover:shadow-watch-glow transition-all duration-200;
   }
 }
