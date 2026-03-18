@@ -13,12 +13,12 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps) {
+  const hasZeroDev = Boolean(process.env.NEXT_PUBLIC_ZERODEV_PROJECT_ID);
+
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <AAInitializer>
-          {children}
-        </AAInitializer>
+        {hasZeroDev ? <AAInitializer>{children}</AAInitializer> : children}
       </QueryClientProvider>
     </WagmiProvider>
   );

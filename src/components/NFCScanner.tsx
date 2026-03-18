@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Waves, ScanLine, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,11 +7,27 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function NFCScanner() {
   const [status, setStatus] = useState<"idle" | "scanning" | "validated">("idle");
+  const router = useRouter();
 
   const handleScan = () => {
     setStatus("scanning");
     setTimeout(() => {
       setStatus("validated");
+      // Simulation SUN : URL unique signée, puis parsing vers /passport/[tokenId]
+      const uid = "NFC-ML-2026-001";
+      const ctr = "00000001";
+      const sig = "MEUCIQ_demo_signature";
+      const url = `https://verify.maison-lumiere.com?uid=${uid}&ctr=${ctr}&sig=${sig}`;
+
+      try {
+        const parsed = new URL(url);
+        const counter = parsed.searchParams.get("ctr") ?? "00000001";
+        const tokenId = Number.parseInt(counter, 10) || 1;
+        setTimeout(() => router.push(`/passport/${tokenId}`), 450);
+      } catch {
+        setTimeout(() => router.push("/passport/1"), 450);
+      }
+
       setTimeout(() => setStatus("idle"), 1800);
     }, 900);
   };
